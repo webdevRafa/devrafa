@@ -9,12 +9,12 @@ export const TimeOfDay: React.FC = () => {
     const updateTimeOfDay = () => {
       const now = new Date();
       const hours = now.getHours();
-      let greeting = "Good Morning";
+      let greeting = "Morning";
 
       if (hours >= 12 && hours < 18) {
-        greeting = "Good Afternoon";
+        greeting = "Afternoon";
       } else if (hours >= 18) {
-        greeting = "Good Evening";
+        greeting = "Evening";
       }
 
       setTimeOfDay(greeting);
@@ -29,7 +29,7 @@ export const TimeOfDay: React.FC = () => {
     <>
       <div className="flex gap-2 items-center">
         <span className="text-sm">{timeOfDay}</span>
-        {timeOfDay === "Good Evening" ? (
+        {timeOfDay === "Evening" ? (
           <MoonIcon className=" text-green size-6" />
         ) : (
           <SunIcon className="text-green size-6" />

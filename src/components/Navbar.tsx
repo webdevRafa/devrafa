@@ -54,10 +54,10 @@ export const Navbar: React.FC = () => {
           <Bars3Icon onClick={handleToggle} className="md:hidden size-8" />
           {/* for desktop */}
           <ul className="text-white py-2 px-6 hidden md:flex gap-7">
-            <li>About</li>
-            <li>Services</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <li className="hover:text-green cursor-pointer">About</li>
+            <li className="hover:text-green cursor-pointer">Services</li>
+            <li className="hover:text-green cursor-pointer">Blog</li>
+            <li className="hover:text-green cursor-pointer">Contact</li>
           </ul>
         </nav>
 
