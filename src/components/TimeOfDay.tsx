@@ -27,8 +27,8 @@ export const TimeOfDay: React.FC = () => {
   }, []);
   return (
     <>
-      <div className="flex gap-2">
-        {timeOfDay}
+      <div className="flex gap-2 items-center">
+        <span className="text-sm">{timeOfDay}</span>
         {timeOfDay === "Good Evening" ? (
           <MoonIcon className=" text-green size-6" />
         ) : (
