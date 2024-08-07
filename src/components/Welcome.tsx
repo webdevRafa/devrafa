@@ -1,4 +1,3 @@
-import logo from "../assets/logo.svg";
 import softlogo from "../assets/softdr.png";
 export const Welcome: React.FC = () => {
   return (
