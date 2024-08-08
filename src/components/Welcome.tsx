@@ -1,31 +1,44 @@
-import softlogo from "../assets/softdr.png";
+import { useEffect, useState } from "react";
+import softlogo from "../assets/devblock.svg";
+
 export const Welcome: React.FC = () => {
+  // STATE
+  const [scrolled, setScrolled] = useState(false);
+  // TOGGLE SCROLL W USEEFFECT
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    // ADD EVENT LISTENER
+    window.addEventListener("scroll", handleScroll);
+
+    // CLEAN UP EVENT LISTENER
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
-      {" "}
-      <div className=" bg-white relative z-40 mt-20">
-        {/* FLEX CONTAINER */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mx-auto max-w-[1200px]">
-          {/* IMAGE LEFT */}
-          <div className="w-full mb-0">
-            <img className="min-w-[300px]" src={softlogo} alt="" />
-          </div>
-
-          {/* WELCOME MESSAGE RIGHT */}
-          <div className="shadow-md md:pb-[30px] w-[90%] mx-auto md:w-full">
-            {/* WELCOME */}
-            <h1 className="py-2 bg-soft-green text-center text-3xl mb-5 font-bold text-dark-green">
-              WELCOME
-            </h1>
-            {/* PARAGRAPH */}
-            <p className="mx-[60px]">
-              Hey! I’m a web developer who’s all about creating sleek,
-              interactive websites. While I specialize in front-end development,
-              I’m also into building secure login systems and managing data with
-              Firebase. I love bringing ideas to life with clean designs and
-              smooth user experiences. Thanks for dropping by!
-            </p>
-          </div>
+      <div className="relative z-40 pt-20 flex gap-20 mx-auto items-center justify-between w-[90%] max-w-[1200px]">
+        <div>
+          <img className="w-full h-full" src={softlogo} alt="" />
+        </div>
+        <div
+          className={`p-4 transition-colors duration-300 ${
+            scrolled ? "text-white" : "text-dark-green"
+          }`}
+        >
+          <h1 className="text-6xl font-bold">WELCOME</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem
+            cumque, quisquam beatae asperiores nihil molestiae. Libero nemo
+            sapiente impedit dignissimos!
+          </p>
         </div>
       </div>
     </>

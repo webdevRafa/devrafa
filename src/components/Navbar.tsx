@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
   // toggle scroll effect based on ↑ 600px scroll ↓
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 500) {
         setScrolled(true);
       } else {
         setScrolled(false);

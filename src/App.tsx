@@ -6,9 +6,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="h-[400px]">
-        <BgImage />
-      </div>
+
+      <BgImage />
+
       <Welcome />
       <div className="h-[5000px] bg-white relative z-40"></div>
     </>
