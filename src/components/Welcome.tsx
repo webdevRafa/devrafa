@@ -24,7 +24,7 @@ export const Welcome: React.FC = () => {
   }, []);
   return (
     <>
-      <div className="relative z-40 pt-20 flex flex-col md:flex-row gap-20 mx-auto items-center justify-between w-[90%] max-w-[1200px]">
+      <div className="pb-20 relative z-40 pt-20 flex flex-col md:flex-row gap-20 mx-auto items-center justify-between w-[90%] max-w-[1200px]">
         <div
           className={`p-4 transition-colors duration-300 ${
             scrolled ? "text-white" : "text-dark-green"
